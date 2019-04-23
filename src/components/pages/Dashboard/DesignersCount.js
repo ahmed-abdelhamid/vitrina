@@ -3,7 +3,10 @@ import { Card } from 'semantic-ui-react';
 
 const DesignersCount = ({ designersCount }) => {
   return (
-    <Card color="blue" style={{ height: '300px', display: 'inline-block' }}>
+    <Card
+      className="custom-shadow"
+      style={{ height: '300px', display: 'inline-block' }}
+    >
       <Card.Content>
         <Card.Header
           textAlign="center"

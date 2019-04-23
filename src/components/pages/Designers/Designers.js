@@ -67,8 +67,6 @@ class Designers extends Component {
       value: typeId
     }));
 
-    // const visibleSubcategoryOptions = this.props.subcategories.filter(({typeId}) => typeId.typeId === )
-
     const subcategoriesOptions = this.props.subcategories.map(
       ({ subTypeId, name }) => ({
         label: name,
@@ -88,7 +86,7 @@ class Designers extends Component {
     return (
       <div style={{ marginRight: '200px' }}>
         <Breadcrumb size="huge" className="addPadding">
-          <Breadcrumb.Section as={NavLink} to="/">
+          <Breadcrumb.Section as={NavLink} to="/" className="custom-link">
             الرئيسية
           </Breadcrumb.Section>
           <Breadcrumb.Divider />

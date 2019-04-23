@@ -25,6 +25,7 @@ const Categories = ({ getCategories, categories }) => {
         to={`/categories/${typeId}/subcategories`}
       >
         <Image
+          label="150px 150px"
           src={
             !imagePath || imagePath === 'undefined' ? placeholder : imagePath
           }
@@ -40,7 +41,7 @@ const Categories = ({ getCategories, categories }) => {
       <CategoryForm open={modalOpened} onClose={() => setModalOpened(false)} />
       <div style={{ marginRight: '200px' }}>
         <Breadcrumb size="huge" className="addPadding">
-          <Breadcrumb.Section as={NavLink} to="/">
+          <Breadcrumb.Section as={NavLink} to="/" className="custom-link">
             الرئيسية
           </Breadcrumb.Section>
           <Breadcrumb.Divider />
@@ -51,7 +52,7 @@ const Categories = ({ getCategories, categories }) => {
           <Card.Group itemsPerRow={5}>{renderCards()}</Card.Group>
           <Button
             circular
-            positive
+            className="custom-button"
             size="massive"
             icon="plus"
             floated="left"

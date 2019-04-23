@@ -15,7 +15,7 @@ const ProfileSettings = ({ adminData, profilePicUpload }) => {
         adminData={adminData}
       />
 
-      <Segment style={{ height: '300px' }} color="blue">
+      <Segment style={{ height: '300px' }} className="custom-border">
         <Header content="البيانات الشخصية" style={{ fontSize: '30px' }} />
         <Grid columns={2}>
           <Grid.Column width={10}>
@@ -40,6 +40,7 @@ const ProfileSettings = ({ adminData, profilePicUpload }) => {
               </List.Item>
             </List>
             <Button
+              className="custom-button"
               primary
               icon
               labelPosition="left"

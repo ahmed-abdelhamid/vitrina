@@ -81,6 +81,7 @@ const Advertisments = ({ getAllAdvertisements, advertisements }) => {
               <Table.Row textAlign="center">
                 <Table.HeaderCell colSpan="3">
                   <Button
+                    className="custom-button"
                     primary
                     icon
                     labelPosition="right"

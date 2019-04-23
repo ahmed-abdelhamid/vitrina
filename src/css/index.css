@@ -1,9 +1,42 @@
-/* body>div,
-body>div>div,
-body>div>div>div,
-body>div>div>div>div.login-form {
-  height: 100%;
-} */
+@font-face {
+  font-family: 'hacen_maghreb_ltregular';
+  src: url('../assets/fonts/Hacen\ Maghreb\ Lt.ttf') format('truetype');
+}
+
+body {
+  font-family: 'hacen_maghreb_ltregular', sans-serif !important;
+}
+
+.custom-button {
+  background-color: #f05b5b !important;
+  color: #fff !important;
+}
+
+.custom-button:hover {
+  background-color: #f34e4e !important;
+  color: #fff !important;
+}
+
+.custom-link {
+  color: #f05b5b !important;
+}
+
+.custom-link:hover {
+  color: #f34e4e !important;
+}
+
+.ui.segment.custom-border {
+  border-top: 2px solid #f34e4e !important;
+}
+
+.ui.card.custom-shadow {
+  box-shadow: 0px 0px 0px 1px #d4d4d5, 0px 2px 0px 0px #f34e4e,
+    0px 1px 3px 0px #d4d4d5 !important;
+}
+
+.icons-table {
+  color: #f34e4e;
+}
 
 .login-form {
   height: 100vh;

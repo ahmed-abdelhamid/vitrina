@@ -19,6 +19,7 @@ const Subcategories = ({ getAllSubcategories, subcategories, match }) => {
     subcategories.map(({ subTypeId, imagePath, name }) => (
       <Card centered raised key={subTypeId} as={NavLink} to={`/designers`}>
         <Image
+          label="150px 150px"
           src={
             !imagePath || imagePath === 'undefined' ? placeholder : imagePath
           }
@@ -38,11 +39,15 @@ const Subcategories = ({ getAllSubcategories, subcategories, match }) => {
       />
       <div style={{ marginRight: '200px' }}>
         <Breadcrumb size="huge" className="addPadding">
-          <Breadcrumb.Section as={NavLink} to="/">
+          <Breadcrumb.Section as={NavLink} to="/" className="custom-link">
             الرئيسية
           </Breadcrumb.Section>
           <Breadcrumb.Divider />
-          <Breadcrumb.Section as={NavLink} to="/categories">
+          <Breadcrumb.Section
+            as={NavLink}
+            to="/categories"
+            className="custom-link"
+          >
             التصنيفات
           </Breadcrumb.Section>
           <Breadcrumb.Divider />
@@ -52,7 +57,7 @@ const Subcategories = ({ getAllSubcategories, subcategories, match }) => {
           <Card.Group itemsPerRow={5}>{renderCards()}</Card.Group>
           <Button
             circular
-            positive
+            className="custom-button"
             size="massive"
             icon="plus"
             floated="left"

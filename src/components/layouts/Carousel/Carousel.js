@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Container, Button, Message } from 'semantic-ui-react';
+import { Divider, Container, Button, Message, Label } from 'semantic-ui-react';
 import {
   CarouselProvider,
   Slider,
@@ -37,6 +37,9 @@ const Carousel = ({ ads }) => {
         naturalSlideHeight={1}
         totalSlides={ads.length}
       >
+        <div dir="rtl">
+          <Label content="900px 100px" />
+        </div>
         <Slider>{renderSlides()}</Slider>
         <Divider />
         <Container textAlign="center">

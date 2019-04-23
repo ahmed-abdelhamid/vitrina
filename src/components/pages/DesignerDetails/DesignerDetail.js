@@ -25,10 +25,63 @@ const DesignerDetail = ({ getDesigner, designer, match }) => {
     return null;
   }
 
+  const rows = [
+    {
+      iconName: 'calendar',
+      rowName: 'تاريخ التسجيل',
+      value: designer.creationdate
+    },
+    {
+      iconName: 'mail',
+      rowName: 'البريد الإلكترونى',
+      value: designer.email || 'لا يوجد'
+    },
+    {
+      iconName: 'phone',
+      rowName: 'رقم الهاتف',
+      value: designer.mobile || 'لا يوجد'
+    },
+    {
+      iconName: 'twitter',
+      rowName: 'حساب تويتر',
+      value: designer.twitter || 'لا يوجد'
+    },
+    {
+      iconName: 'instagram',
+      rowName: 'حساب الانستجرام',
+      value: designer.instagram || 'لا يوجد'
+    },
+    {
+      iconName: 'browser',
+      rowName: 'الموقع الإلكترونى',
+      value: designer.website || 'لا يوجد'
+    },
+    {
+      iconName: 'sticky note',
+      rowName: 'الوصف',
+      value: designer.description || 'لا يوجد'
+    }
+  ];
+
+  const renderRows = () =>
+    rows.map(({ iconName, rowName, value }, index) => (
+      <Table.Row key={index}>
+        <Table.Cell style={{ fontWeight: 'bold' }}>
+          <Icon name={iconName} size="large" className="icons-table" />
+          {rowName}
+        </Table.Cell>
+        <Table.Cell>{value}</Table.Cell>
+      </Table.Row>
+    ));
+
   return (
     <div style={{ marginRight: '200px' }}>
       <Breadcrumb size="huge" className="addPadding">
-        <Breadcrumb.Section as={NavLink} to="/designers/1/1">
+        <Breadcrumb.Section
+          as={NavLink}
+          to="/designers"
+          className="custom-link"
+        >
           المصممين
         </Breadcrumb.Section>
         <Breadcrumb.Divider />
@@ -50,57 +103,7 @@ const DesignerDetail = ({ getDesigner, designer, match }) => {
         />
 
         <Table selectable color="black">
-          <Table.Body>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="calendar" size="large" />
-                تاريخ التسجيل
-              </Table.HeaderCell>
-              <Table.Cell>{designer.creationdate}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="mail" size="large" />
-                البريد الإلكترونى
-              </Table.HeaderCell>
-              <Table.Cell>{designer.email || 'No'}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="phone" size="large" />
-                رقم الهاتف
-              </Table.HeaderCell>
-              <Table.Cell>{designer.mobile || 'No'}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="twitter" size="large" />
-                حساب تويتر
-              </Table.HeaderCell>
-              <Table.Cell>{designer.twitter || 'No'}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="instagram" size="large" />
-                حساب الانستجرام
-              </Table.HeaderCell>
-              <Table.Cell>{designer.instagram || 'No'}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="browser" size="large" />
-                الموقع الإلكترونى
-              </Table.HeaderCell>
-              <Table.Cell>{designer.website || 'No'}</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.HeaderCell>
-                <Icon name="sticky note" size="large" />
-                الوصف
-              </Table.HeaderCell>
-              <Table.Cell>{designer.description || 'No'}</Table.Cell>
-            </Table.Row>
-          </Table.Body>
+          <Table.Body>{renderRows()}</Table.Body>
         </Table>
       </Container>
     </div>

@@ -8,6 +8,7 @@ const AdvertisementBar = ({ ads }) => (
   <div style={{ padding: '50px' }}>
     <Carousel ads={ads} />
     <Button
+      className="custom-button"
       as={NavLink}
       to="/advertisements"
       primary
